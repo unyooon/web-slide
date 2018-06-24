@@ -48,11 +48,13 @@
                 var file = e.target.files; 
                 var reader = new FileReader();
                 reader.readAsText(file[0]);
+
                 reader.onload = function(ev){
                     text = reader.result;
                     console.log(text);
                     obj3.innerHTML = ""
                     obj2.innerHTML = text;
+
                     Reveal.initialize({
                          dependencies: [
                             { src: 'plugin/markdown/marked.js' },
