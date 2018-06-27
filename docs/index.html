@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+        <link rel="stylesheet" href="css/form.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+    </head>
+    <body>
+        <div id="form">
+             <div class="outer">
+                  <div class="inner">
+                      <label class="pure-file">
+                          <font color="white">
+                                <img src="img/upload_icon.png">
+                                <input type="file" id="selfile" hidden />
+                          </font>
+                      </label>
+                  </div>
+             </div>
+        </div>
+        <div class="reveal">
+            <div class="slides">
+                <section
+                 id="slidesText"
+                 data-markdown
+                 data-separator="^\n---$"
+                 data-separator-vertical="^\n>>>$">
+                </section>
+            </div>
+        </div>
+        <script>
+            var obj1 = document.getElementById("selfile");
+            var obj2 = document.getElementById("slidesText");
+            var obj3 = document.getElementById("form")
+
+            obj1.addEventListener( 'change', function(e) {
+                var file = e.target.files; 
+                var reader = new FileReader();
+                reader.readAsText(file[0]);
+
+                reader.onload = function(ev){
+                    text = reader.result;
+                    console.log(text);
+                    obj3.innerHTML = ""
+                    obj2.innerHTML = text;
+
+                    Reveal.initialize({
+                         dependencies: [
+                            { src: 'plugin/markdown/marked.js' },
+                            { src: 'plugin/markdown/markdown.js' },
+                            { src: 'plugin/notes/notes.js', async: true },
+                            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                        ]
+                     });
+                }
+            });
+        </script>
+
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+    </body>
+</html>
