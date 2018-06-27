@@ -6,6 +6,8 @@
 
         <title>reveal.js</title>
 
+        <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+        <link rel="stylesheet" href="css/form.css">
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/black.css">
 
@@ -19,15 +21,21 @@
             link.type = 'text/css';
             link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
             document.getElementsByTagName( 'head' )[0].appendChild( link );
-            document.getElementById("")
         </script>
 
     </head>
     <body>
         <div id="form">
-            <form name="test">
-                <input type="file" id="selfile"><br>
-            </form>
+             <div class="outer">
+                  <div class="inner">
+                      <label class="pure-file">
+                          <font color="white">
+                                <img src="img/upload_icon.png">
+                                <input type="file" id="selfile" hidden />
+                          </font>
+                      </label>
+                  </div>
+             </div>
         </div>
         <div class="reveal">
             <div class="slides">
