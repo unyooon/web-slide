@@ -6,7 +6,8 @@
 
         <title>reveal.js</title>
 
-        <link rel="stylesheet" href="https://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
         <link rel="stylesheet" href="css/form.css">
         <link rel="stylesheet" href="css/reveal.css">
         <link rel="stylesheet" href="css/theme/black.css">
@@ -25,20 +26,29 @@
 
     </head>
     <body>
+        <header>
+            <input type="checkbox" id="tag-menu"/>
+            <label class="fa fa-bars menu-bar" for="tag-menu"></label>
+            <font size="5" color="white">web-slide</font>
+            <div class="drawer">
+            <nav>
+              <ul>
+                <li><a href="description.html">How to use</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
         <div id="form">
-             <div class="outer">
-                <font size="5">
-                    <a href="description.html">→詳細はコチラ←</a>
-                </font>
-                  <div class="inner">
-                      <label class="pure-file">
-                          <font color="white">
-                                <img src="img/upload_icon.png">
-                                <input type="file" id="selfile" hidden />
-                          </font>
-                      </label>
-                  </div>
-             </div>
+            <div class="outer">
+                <div class="inner">
+                    <label class="pure-file">
+                        <font color="white">
+                            <img src="img/upload_icon.png">
+                            <input type="file" id="selfile" hidden />
+                        </font>
+                    </label>
+                </div>
+            </div>
         </div>
         <div class="reveal">
             <div class="slides">
