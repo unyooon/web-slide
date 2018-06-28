@@ -13,3 +13,88 @@
     width: 100px;
     text-align: center;
 }
+* {
+    padding:0;
+    margin:0;
+}
+
+body {
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:18px;
+    background-color:#2E2E2E;
+}
+
+header {
+    width:100%;
+    background-color:#2E2E2E;
+    z-index:1000;
+}
+
+.menu-bar {
+    color:white;
+    font-size:26px;
+    cursor:pointer;
+    padding:10px 12px;
+    margin-left:10px;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.menu-bar:hover {
+    background-color:rgba(0, 0, 0, 0.1);
+    border-radius:50px;
+}
+
+#tag-menu {
+    display:none;
+}
+
+
+#tag-menu:checked ~ div.drawer {
+ animation: slide-in 0.5s ease;
+ animation-fill-mode: forwards;
+}
+
+.drawer {
+    position:fixed;
+    left:-280px;
+    background-color:#2E2E2E;
+    height:100%;
+    z-index:100;
+    width:280px;
+    animation: slide-out 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+.drawer ul li {
+    list-style:none;
+}
+
+.drawer ul li a {
+    padding:10px 30px;
+    text-decoration:none;
+    display:block;
+    color:#FFF;
+    border-top:1px solid #2E2E2E;
+}
+
+.drawer ul li a:hover{
+    background-color:rgba(0, 0, 0, 0.1);
+}
+
+.drawer ul li a i {
+    width:50px;
+    height:35px;
+    text-align:center;
+    padding-top:15px;
+}
+
+@keyframes slide-in {
+ from {left: -280px;}
+ to {left: 0;}
+}
+
+@keyframes slide-out {
+ from {left: 0;}
+ to {left: -280px;}
+}
